@@ -9,6 +9,9 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.49.0",
-    "@types/node": "^22.9.0"
+    "@types/node": "^22.9.0",
+    "type": "module",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
   }
 }
