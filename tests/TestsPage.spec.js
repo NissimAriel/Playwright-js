@@ -1,7 +1,7 @@
 // @ts-check
 const { test, expect } = require("@playwright/test");
 const { Utils } = require("../Utilities/Utils");
-const { POMmanager } = require("../pages.js/POMnanager");
+const { POMmanager } = require("../pages/POMnanager");
 
 test.describe("Tests", () => {
   test.beforeEach(async ({ page }) => {
