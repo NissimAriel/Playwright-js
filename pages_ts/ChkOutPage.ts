@@ -1,8 +1,14 @@
-const { expect } = require("@playwright/test");
+import {test, expect, Locator, Page} from '@playwright/test';
 
-exports.CheckOut = class Checkout{
+export class Checkout{
 
-    constructor(page) {
+    page: Page;
+    firstName: Locator;
+    lastName: Locator;
+    zip: Locator;
+    contBtn: Locator;
+
+    constructor(page: Page) {
 
         this.page = page;
         this.firstName = page.locator("#first-name");
@@ -11,7 +17,7 @@ exports.CheckOut = class Checkout{
         this.contBtn = page.locator("#continue")
     }
 
-    async personalDetails(first, last, zip){
+    async personalDetails(first: string, last: string, zip: string){
         await this.firstName.fill(first);
         await this.lastName.fill(last);
         await this.zip.fill(zip)
@@ -19,3 +25,4 @@ exports.CheckOut = class Checkout{
     }
 
 }
+

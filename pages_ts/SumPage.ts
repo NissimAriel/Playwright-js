@@ -1,8 +1,11 @@
-const { expect } = require("@playwright/test");
+import {test, expect, Locator, Page} from '@playwright/test';
+export class Sum {
 
-exports.Sum = class Sum {
+    page: Page;
+    checkout: Locator;
+    itemTitle: Locator;
 
-    constructor(page){
+    constructor(page: Page){
         this.page = page;
         this.checkout = page.locator("#checkout")
         this.itemTitle = page.locator(".inventory_item_name");
@@ -11,7 +14,5 @@ exports.Sum = class Sum {
     async goToChckOut(){
         await this.checkout.click();
     }
-
-
-
 }
+

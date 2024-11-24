@@ -1,9 +1,13 @@
-const { expect } = require("@playwright/test");
+import {test, expect, Locator, Page} from '@playwright/test';
 
-exports.OverView = class OverView {
+export class OverView {
         
+    page: Page;
+    itemTitle: Locator;
+    finishBtn: Locator;
+    success: Locator;
 
-    constructor(page) {
+    constructor(page: Page) {
         this.page = page;
         this.itemTitle = page.locator(".inventory_item_name");
         this.finishBtn = page.locator("#finish");
